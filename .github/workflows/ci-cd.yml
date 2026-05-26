@@ -2,7 +2,7 @@ name: Pipeline CI/CD - DevOps
 
 on:
   push:
-    branches: [ "principal" ] # Se activa automáticamente al hacer push en tu rama 'principal'
+    branches: [ "principal" ]
 
 jobs:
   build-and-push:
