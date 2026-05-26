@@ -1,0 +1,28 @@
+name: Pipeline CI/CD - DevOps
+
+on:
+  push:
+    branches: [ "principal" ] # Se activa automáticamente al hacer push en tu rama 'principal'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Descargar codigo del repositorio
+      uses: actions/checkout@v4
+
+    - name: 2. Iniciar sesion en Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: 3. Construir imagen y subir a Docker Hub
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: |
+          ${{ secrets.DOCKERHUB_USERNAME }}/api-devops:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/api-devops:${{ github.sha }}
