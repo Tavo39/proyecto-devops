@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Control Panel</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background: #1e293b; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); text-align: center; max-width: 450px; border: 1px solid #334155; }
+        .icon { font-size: 4rem; margin-bottom: 1rem; display: inline-block; animation: pulse 2s infinite; }
+        h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #38bdf8; }
+        p { color: #94a3b8; font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.5; }
+        .status-badge { background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 50px; font-weight: bold; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .status-badge::before { content: ''; display: inline-block; width: 8px; height: 8px; background: white; border-radius: 50%; animation: blink 1s infinite; }
+        .footer { margin-top: 2rem; font-size: 0.8rem; color: #64748b; border-top: 1px solid #334155; padding-top: 1rem; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <span class="icon">🚀</span>
+        <h1>¡Despliegue Exitoso!</h1>
+        <p>Esta aplicación de Node.js ha sido compilada por GitHub Actions e implementada automáticamente en Azure Container Instances.</p>
+        <div class="status-badge">Pipeline 100% Activo</div>
+        <div class="footer">Desarrollado por Gustavo • DevOps Académico 2026</div>
+    </div>
+</body>
+</html>
